@@ -1,9 +1,11 @@
 $(function() {
 	var availableTags = [
 		"Driver",
+		"Frat Boy",
 		"Home Cleaner",
+		"Pitch Man",
 		"Software Engineer",
-		"Frat Boy"
+		"Web Developer"
 	];
 	$( "#job-tag" ).autocomplete({
 		source: availableTags
