@@ -1,101 +1,117 @@
-<style>
-    html, body { 
-      /*font-family: 'Work Sans', sans-serif;*/
-    }
+html, body { 
+	/*font-family: 'Work Sans', sans-serif;*/
+}
 
 /*    h1 {
-      
-    }*/
+	
+}*/
 
-    .big-bold {
-      font-style: bold;
-      font-size: 5em;
-      font-weight: 900;
-    }
+.big-bold {
+	font-style: bold;
+	font-size: 5em;
+	font-weight: 900;
+}
 
-    hr {
-      width: 50%;
-    }
+hr {
+	width: 50%;
+}
 
-    .jumbotron {
-      width: 100%;
-      height: 100%;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
+.jumbotron {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
 
 /*    .jumbotron-half {
-      width: 50%;
-      height: 50%;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }*/
+	width: 50%;
+	height: 50%;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}*/
 
-    #text-logo {
-      font-style: bold;
-      font-size: 13em;
-      font-weight: 900;
-    }
+#text-logo {
+	font-style: bold;
+	font-size: 13em;
+	font-weight: 900;
+}
 
-    #text-logo-sm {
-      font-style: bold;
-      font-size: 5em;
-      font-weight: 900;
-    }
+#text-logo-sm {
+	font-style: bold;
+	font-size: 5em;
+	font-weight: 900;
+}
 
-    #sub-header {
-      font-style: normal;
-      font-size: 2.5em;
-      font-weight: 300;
-    }
+#sub-header {
+	font-style: normal;
+	font-size: 2.5em;
+	font-weight: 300;
+}
 
-    .secondary-text {
-      font-style: medium;
-      font-size: 15em;
-      font-weight: 500;
-    }
+.secondary-text {
+	font-style: medium;
+	font-size: 15em;
+	font-weight: 500;
+}
 
-    .listen {
-      color: #FF530D;
-    }
+.listen {
+	color: #FF530D;
+}
 
-    .read {
-     color: #AB1A25;
-    }
+.read {
+ color: #AB1A25;
+}
 
-    #page-one {
-      /*background-color: #EFEFEF;*/
-      color: #000;
-      background: url(http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/curtains/curtains-001586-silver-gray.jpg) no-repeat center center fixed; 
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-    }
+#page-one {
+	/*background-color: #EFEFEF;*/
+	color: #000;
+	background: url(http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/curtains/curtains-001586-silver-gray.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
 
-    #page-two {
-      background-color: #fff;
-    }
+#page-two {
+	background-color: #fff;
+}
 
-    #page-three {
-      background-color: #fff;
-    }
+#page-three {
+	background-color: #fff;
+}
 
-    .top-buffer {
-      margin-top: 40px;
-    }
+.top-buffer {
+	margin-top: 40px;
+}
 
-    .site-wrapper {
-      display: table;
-    }
+.site-wrapper {
+	display: table;
+}
 
-    .site-wrapper-inner {
-      vertical-align: middle;
-      display: table-cell;
-    }
+.site-wrapper-inner {
+	vertical-align: middle;
+	display: table-cell;
+}
 
-    .vid img {
-      height: 678px;
-    }
+.vid img {
+	height: 678px;
+}
 
-  </style>
+
+input#job-tag {
+	background-color: transparent;
+	border:0;
+	border-bottom:solid 1px #000;
+	outline:none;
+	max-width: 10em;
+	text-align: center;
+}
+
+input#pay-rate {
+	background-color: transparent;
+	border:0;
+	border-bottom:solid 1px #000;
+	outline:none;
+	max-width: 3em;
+	text-align: center;
+}
