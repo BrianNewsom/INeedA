@@ -21,6 +21,11 @@ io.on('connection', function(socket){
 	GLOBAL_SOCKET = socket;
 })
 
+app.get('/venmo/callback', function(req, res){
+	console.log("Received Venmo callback /venmo/callback");
+	console.log(req.body);
+})
+
 app.post('/', function(req, res){
 
 	console.log("Received POST request to /");
@@ -33,10 +38,6 @@ app.post('/', function(req, res){
 			stringifiedFields = JSON.stringify(fields)
 			console.log(stringifiedFields);
 
-			res.writeHead(200, {
-					'content-type': 'text/plain'
-			});
-
 			if (GLOBAL_SOCKET !== null){
 				console.log("Emitting data to mobile via socket");
 				GLOBAL_SOCKET.emit('request_pool', {
@@ -47,11 +48,18 @@ app.post('/', function(req, res){
 					address : user.address,
 					city : user.city
 				});
+
+				// Handle job finishing
+				GLOBAL_SOCKET.on('finished_job', function(data){
+					console.log("Received finished job message");
+					console.log(data);
+					//var redirect_url = "https://api.venmo.com/v1/oauth/authorize?client_id=3044&scope=make_payments%20access_profile&response_type=token";
+					var redirect_url = "http://nbc.com"
+					res.redirect(redirect_url);
+				})
 			} else{
 				console.log("Could not post, global socket does not exist");
 			}
-
-			res.end(stringifiedFields);
 	});
 });
 
