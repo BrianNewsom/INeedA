@@ -33,7 +33,7 @@ io.on('connection', function(socket){
 		console.log(data)
 		var blob = JSON.parse(data)
 
-		var url = 'https://sandbox-api.venmo.com/v1/payments?phone=15555555555&amount=0.10&note=' + encodeURIComponent("For " + blob.job) + '&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d'
+		var url = 'https://api.venmo.com/v1/payments?phone=19704120347&amount=' + blobl.total_cost + '&note=' + encodeURIComponent("For " + blob.job) + '&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d'
 		console.log(url)
 
 		request.post(url, function (error, response, body) {
