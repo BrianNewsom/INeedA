@@ -42,6 +42,11 @@ io.on('connection', function(socket){
 				twil.sendText('Your job has been completed! Your account has been charged $' + blob.total_cost + '. Visit https://ineedaapp.herokuapp.com/star.html?id=14520aspdosa9 to review Peyman Mortazavi.');
 				console.log("sent text message to customer.")
 		  }
+			else {
+				console.log("API failed, error:")
+				console.error(error)
+				console.log("status code: " + response.statusCode)
+			}
 		})
 	})
 })
