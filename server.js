@@ -7,8 +7,10 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
 var user = {
-	name: "Peyman",
-	skills: ["Pitch Man", "Cleaner"]
+	name: "Peyman Mortazavi",
+	phone: "(571) 263-4240",
+	address: "3685 Moorhead Ave",
+	city: "Boulder, CO 80305"
 }
 
 // Socket io junk
@@ -37,7 +39,14 @@ app.post('/', function(req, res){
 
 			if (GLOBAL_SOCKET !== null){
 				console.log("Emitting data to mobile via socket");
-				GLOBAL_SOCKET.emit('request_pool', fields);
+				GLOBAL_SOCKET.emit('request_pool', {
+					job_tag : fields.job_tag,
+					pay_rate : fields.pay_rate,
+					name : user.name,
+					phone : user.phone,
+					address : user.address,
+					city : user.city
+				});
 			} else{
 				console.log("Could not post, global socket does not exist");
 			}
