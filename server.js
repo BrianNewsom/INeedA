@@ -27,16 +27,17 @@ io.on('connection', function(socket){
 	socket.on('finished_job', function(data){
 		console.log("Received finished job message")
 		console.log(data)
-		console.log(typeof(data))
+		var blob = JSON.parse(data)
 
-		// request.post('https://sandbox-api.venmo.com/v1/payments?phone=9704120347&amount=0.10&note=for%20testing&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d', function (error, response, body) {
-		//   if (!error && response.statusCode == 200) {
-		//     console.log(body) // Show the HTML for the Google homepage.
-		//   }
-		// })
-		// Send twilio message
+		var url = 'https://sandbox-api.venmo.com/v1/payments?phone=9704120347&amount=0.10&note=' + encodeURIComponent("For " + blob.job) + '&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d'
+		console.log(url)
 
-//		twil.sendText('Your job has been completed! Your account has been charged $' + data.total_cost + '. Visit https://ineedaapp.herokuapp.com/star.html?id=14520aspdosa9 to review Peyman Mortazavi.');
+		request.post('https://sandbox-api.venmo.com/v1/payments?phone=9704120347&amount=0.10&note=' + encodeURIComponent("For " + blob.job) + '&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d', function (error, response, body) {
+		  if (!error && response.statusCode == 200) {
+				//Send twilio message
+				twil.sendText('Your job has been completed! Your account has been charged $' + blob.total_cost + '. Visit https://ineedaapp.herokuapp.com/star.html?id=14520aspdosa9 to review Peyman Mortazavi.');
+		  }
+		})
 	})
 })
 
