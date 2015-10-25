@@ -28,7 +28,7 @@ io.on('connection', function(socket){
 	console.log('received connection on socket, setting global socket');
 	GLOBAL_SOCKET = socket;
 
-	socket.on('finished_job', function(data){
+	socket.on('finished_job', function(data) {
 		console.log("Received finished job message")
 		console.log(data)
 		var blob = JSON.parse(data)
@@ -69,7 +69,7 @@ app.post('/', function(req, res){
 			stringifiedFields = JSON.stringify(fields)
 			console.log(stringifiedFields);
 
-			if (GLOBAL_SOCKET !== null){
+			if (GLOBAL_SOCKET !== null && fields.job_tag && fields.pay_rate) {
 				console.log("Emitting data to mobile via socket");
 
 				var obj = {
