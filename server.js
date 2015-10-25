@@ -6,6 +6,10 @@ var util = require('util');
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var twil = require('./twil.js');
+var favicon = require('serve-favicon');
+
+// set favicon
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 
 var request = require('request');

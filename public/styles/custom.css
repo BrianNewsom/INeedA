@@ -122,6 +122,7 @@ input#job-tag {
 	outline:none;
 	max-width: 10em;
 	text-align: center;
+	border-radius: 10px;
 }
 
 input#pay-rate {
@@ -131,6 +132,7 @@ input#pay-rate {
 	outline:none;
 	max-width: 2em;
 	text-align: center;
+	border-radius: 10px;
 }
 
 input#submit-btn {
