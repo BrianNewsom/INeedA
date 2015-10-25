@@ -5,9 +5,6 @@ var formidable = require("formidable");
 var util = require('util');
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
-var cors = require('cors');
-
-app.use(cors());
 
 var user = {
 	name: "Peyman Mortazavi",
@@ -22,7 +19,6 @@ var GLOBAL_SOCKET = null;
 io.on('connection', function(socket){
 	console.log('received connection on socket, setting global socket');
 	GLOBAL_SOCKET = socket;
-	io.set('origins','*');
 
 	/*
 	socket.on('finished_job', function(data){
