@@ -159,3 +159,14 @@ input#submit-btn {
 		}
 }
 
+.mailing-signup {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.mailing-signup a {
+	color: gray;
+  -webkit-animation-duration: 1.5s;
+	-webkit-animation-delay: 1.5s;
+}
