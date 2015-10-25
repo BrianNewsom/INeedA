@@ -23,7 +23,13 @@ io.on('connection', function(socket){
 	console.log('received connection on socket, setting global socket');
 	GLOBAL_SOCKET = socket;
 	io.set('origins','*');
+
+	socket.on('finished_job', function(data){
+		console.log("Received finished job message");
+		console.log(data);
+	})
 })
+
 
 app.get('/venmo/callback', function(req, res){
 	console.log("Received Venmo callback /venmo/callback");
@@ -54,16 +60,10 @@ app.post('/', function(req, res){
 				});
 
 				// Handle job finishing
-				GLOBAL_SOCKET.on('finished_job', function(data){
-					console.log("Received finished job message");
-					console.log(data);
-					var redirect_url = "https://api.venmo.com/v1/oauth/authorize?client_id=3044&scope=make_payments%20access_profile&response_type=token";
-					res.redirect(redirect_url);
-				})
 			} else{
 				console.log("Could not post, global socket does not exist");
-				res.end(stringifiedFields);
 			}
+			res.end(stringifiedFields);
 	});
 });
 

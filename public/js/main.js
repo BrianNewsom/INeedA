@@ -49,4 +49,7 @@ $(document).ready(function(){
 		$('#pay-rate').addClass('box-shadow');
 	}
 
+
+	// Websockets
+	
 });
