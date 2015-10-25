@@ -5,7 +5,11 @@ $(function() {
 		"Home Cleaner",
 		"Pitch Man",
 		"Software Engineer",
-		"Web Developer"
+		"Web Developer",
+		"Demo Man",
+		"Developer",
+		"Dance Partner",
+		"Dirt Removal"
 	];
 	$( "#job-tag" ).autocomplete({
 		source: availableTags
