@@ -53,8 +53,7 @@ app.post('/', function(req, res){
 				GLOBAL_SOCKET.on('finished_job', function(data){
 					console.log("Received finished job message");
 					console.log(data);
-					//var redirect_url = "https://api.venmo.com/v1/oauth/authorize?client_id=3044&scope=make_payments%20access_profile&response_type=token";
-					var redirect_url = "http://nbc.com"
+					var redirect_url = "https://api.venmo.com/v1/oauth/authorize?client_id=3044&scope=make_payments%20access_profile&response_type=token";
 					res.redirect(redirect_url);
 				})
 			} else{
