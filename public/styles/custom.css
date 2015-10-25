@@ -78,7 +78,7 @@ hr {
 #page-one {
 	/*background-color: #EFEFEF;*/
 	color: #fff;
-	background: url(/images/bartender.jpg) no-repeat center center fixed; 
+	background: url(/images/bartender-compressed.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
