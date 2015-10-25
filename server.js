@@ -15,8 +15,8 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 var request = require('request');
 
 var user = {
-	name: "Peyman Mortazavi",
-	phone: "(571) 263-4240",
+	name: "Dawson Botsford",
+	phone: "(970) 412-0347",
 	address: "3355 S Las Vegas Blvd",
 	city: "Las Vegas, NV 89109"
 }
