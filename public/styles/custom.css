@@ -34,18 +34,21 @@ hr {
 	font-style: bold;
 	font-size: 13em;
 	font-weight: 900;
+  -webkit-animation-duration: 1.5s;
 }
 
 #text-logo-sm {
 	font-style: bold;
 	font-size: 5em;
 	font-weight: 900;
+  -webkit-animation-duration: 1.5s;
 }
 
 #sub-header {
 	font-style: normal;
 	font-size: 2.5em;
 	font-weight: 300;
+  -webkit-animation-duration: 3s;
 }
 
 .secondary-text {
