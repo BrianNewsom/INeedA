@@ -24,10 +24,12 @@ io.on('connection', function(socket){
 	GLOBAL_SOCKET = socket;
 	io.set('origins','*');
 
+	/*
 	socket.on('finished_job', function(data){
 		console.log("Received finished job message");
 		console.log(data);
 	})
+	*/
 
 	/*
 	socket.on('disconnect', function() {
