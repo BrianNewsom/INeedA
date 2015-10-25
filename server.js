@@ -40,6 +40,7 @@ io.on('connection', function(socket){
 		  if (!error && response.statusCode == 200) {
 				//Send twilio message
 				twil.sendText('Your job has been completed! Your account has been charged $' + blob.total_cost + '. Visit https://ineedaapp.herokuapp.com/star.html?id=14520aspdosa9 to review Peyman Mortazavi.');
+				console.log("sent text message to customer.")
 		  }
 		})
 	})
