@@ -7,7 +7,6 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var cors = require('cors');
 
-io.set('origins','*');
 app.use(cors());
 
 var user = {
@@ -23,6 +22,7 @@ var GLOBAL_SOCKET = null;
 io.on('connection', function(socket){
 	console.log('received connection on socket, setting global socket');
 	GLOBAL_SOCKET = socket;
+	io.set('origins','*');
 })
 
 app.get('/venmo/callback', function(req, res){
