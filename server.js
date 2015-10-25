@@ -7,7 +7,7 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 var cors = require('cors');
 
-
+io.set('origins','*');
 app.use(cors());
 
 var user = {
@@ -62,6 +62,7 @@ app.post('/', function(req, res){
 				})
 			} else{
 				console.log("Could not post, global socket does not exist");
+				res.end(stringifiedFields);
 			}
 	});
 });
