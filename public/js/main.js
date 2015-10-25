@@ -32,7 +32,7 @@ $(document).ready(function(){
 			var payRate = data.pay_rate;	
 			if (jobTag && payRate){
 				// Successful query
-				sweetAlert('Success!', 'Successfully posted a job request for ' + jobTag + ' with rate $' + payRate + ' per hour.  You will be contacted as soon as we find a match.', "success" );
+				sweetAlert('Success!', 'Successfully posted a job request for ' + jobTag + ' with rate $' + payRate + ' per hour.  A contractor will be in touch soon!', "success" );
 				// Clear the form
 				clearForm($form);
 			} 
