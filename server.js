@@ -1,12 +1,23 @@
 var express = require('express');
 var app = express();
+var http = require("http").Server(app);
 var formidable = require("formidable");
 var util = require('util');
+var io = require('socket.io')(http);
+var port = process.env.PORT || 3000;
 
 var user = {
 	name: "Peyman",
 	skills: ["Pitch Man", "Cleaner"]
 }
+
+// Socket io junk
+var GLOBAL_SOCKET = null;
+
+io.on('connection', function(socket){
+	console.log('received connection on socket, setting global socket');
+	GLOBAL_SOCKET = socket;
+})
 
 app.post('/', function(req, res){
 
@@ -24,6 +35,13 @@ app.post('/', function(req, res){
 					'content-type': 'text/plain'
 			});
 
+			if (GLOBAL_SOCKET !== null){
+				console.log("Emitting data to mobile via socket");
+				GLOBAL_SOCKET.emit('request_pool', stringifiedFields);
+			} else{
+				console.log("Could not post, global socket does not exist");
+			}
+
 			res.end(stringifiedFields);
 	});
 });
@@ -31,7 +49,7 @@ app.post('/', function(req, res){
 // serve out of public folder
 app.use(express.static('public'));
 
-var server = app.listen(3000, function () {
+var server = http.listen(port, function () {
   var host = server.address().address;
   var port = server.address().port;
 
