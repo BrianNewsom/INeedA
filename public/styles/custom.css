@@ -35,6 +35,7 @@ hr {
 	font-size: 13em;
 	font-weight: 900;
   -webkit-animation-duration: 1.5s;
+	-webkit-animation-delay: 1.5s;
 }
 
 #text-logo-sm {
@@ -42,6 +43,14 @@ hr {
 	font-size: 5em;
 	font-weight: 900;
   -webkit-animation-duration: 1.5s;
+	-webkit-animation-delay: 1.5s;
+}
+
+#intro-header {
+	font-style: normal;
+	font-size: 2.5em;
+	font-weight: 300;
+  -webkit-animation-duration: 2s;
 }
 
 #sub-header {
@@ -49,6 +58,7 @@ hr {
 	font-size: 2.5em;
 	font-weight: 300;
   -webkit-animation-duration: 3s;
+	-webkit-animation-delay: 2s;
 }
 
 .secondary-text {
@@ -68,7 +78,7 @@ hr {
 #page-one {
 	/*background-color: #EFEFEF;*/
 	color: #000;
-	background: url(http://cdn.mysitemyway.com/etc-mysitemyway/backgrounds/legacy-previews/backgrounds/curtains/curtains-001586-silver-gray.jpg) no-repeat center center fixed; 
+	background: url(/images/65H.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -92,7 +102,7 @@ hr {
 }
 
 .site-wrapper-inner {
-	vertical-align: middle;
+	/* vertical-align: middle; */
 	display: table-cell;
 }
 
@@ -117,4 +127,13 @@ input#pay-rate {
 	outline:none;
 	max-width: 3em;
 	text-align: center;
+}
+
+input#submit-btn {
+  -webkit-animation-duration: 3s;
+	-webkit-animation-delay: 2s;
+}
+
+.box-shadow {
+	box-shadow: 0 0 10px darkorange;
 }

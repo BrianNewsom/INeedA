@@ -1,4 +1,8 @@
 $(document).ready(function(){
+	// Remove box-shadow when we fill in element
+	$('.box-shadow').focusout(function(){
+		$(this).removeClass('box-shadow');
+	})
 
 	$("#ineeda-form").submit(function(event) {
 
@@ -40,6 +44,9 @@ $(document).ready(function(){
 	function clearForm(form){
 		$('#job-tag').val('');
 		$('#pay-rate').val('');
+	
+		$('#job-tag').addClass('box-shadow');
+		$('#pay-rate').addClass('box-shadow');
 	}
 
 });

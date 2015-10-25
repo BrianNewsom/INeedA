@@ -19,9 +19,11 @@ app.post('/', function(req, res){
 			//on your application.
 			stringifiedFields = JSON.stringify(fields)
 			console.log(stringifiedFields);
+
 			res.writeHead(200, {
 					'content-type': 'text/plain'
 			});
+
 			res.end(stringifiedFields);
 	});
 });
