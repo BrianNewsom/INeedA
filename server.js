@@ -37,7 +37,7 @@ app.post('/', function(req, res){
 
 			if (GLOBAL_SOCKET !== null){
 				console.log("Emitting data to mobile via socket");
-				GLOBAL_SOCKET.emit('request_pool', stringifiedFields);
+				GLOBAL_SOCKET.emit('request_pool', fields);
 			} else{
 				console.log("Could not post, global socket does not exist");
 			}
