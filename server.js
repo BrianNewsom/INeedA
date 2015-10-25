@@ -28,6 +28,14 @@ io.on('connection', function(socket){
 		console.log("Received finished job message");
 		console.log(data);
 	})
+
+	socket.on('disconnect', function() {
+		console.log('Got disconnect!');
+		if (GLOBAL_SOCKET == socket){
+			GLOBAL_SOCKET = null;
+		}
+	});
+
 })
 
 
