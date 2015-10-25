@@ -20,12 +20,10 @@ io.on('connection', function(socket){
 	console.log('received connection on socket, setting global socket');
 	GLOBAL_SOCKET = socket;
 
-	/*
 	socket.on('finished_job', function(data){
 		console.log("Received finished job message");
 		console.log(data);
 	})
-	*/
 
 	/*
 	socket.on('disconnect', function() {
