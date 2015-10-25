@@ -6,6 +6,8 @@ var util = require('util');
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
+var request = require('request');
+
 var user = {
 	name: "Peyman Mortazavi",
 	phone: "(571) 263-4240",
@@ -22,7 +24,15 @@ io.on('connection', function(socket){
 
 	socket.on('finished_job', function(data){
 		console.log("Received finished job message");
-		console.log(data);
+		console.log(data)
+		console.log(typeof(data))
+
+		// request.post('https://sandbox-api.venmo.com/v1/payments?phone=9704120347&amount=0.10&note=for%20testing&access_token=07a6297b15ab83f1a8e02feabd23bf0db21bb2c9f054db3833f2924bb62a228d', function (error, response, body) {
+		//   if (!error && response.statusCode == 200) {
+		//     console.log(body) // Show the HTML for the Google homepage.
+		//   }
+		// })
+
 	})
 
 	/*
