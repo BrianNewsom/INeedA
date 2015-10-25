@@ -50,14 +50,18 @@ app.post('/', function(req, res){
 
 			if (GLOBAL_SOCKET !== null){
 				console.log("Emitting data to mobile via socket");
-				GLOBAL_SOCKET.emit('request_pool', {
+
+				var obj = {
 					job_tag : fields.job_tag,
 					pay_rate : fields.pay_rate,
 					name : user.name,
 					phone : user.phone,
 					address : user.address,
 					city : user.city
-				});
+				}
+				console.log(obj);
+
+				GLOBAL_SOCKET.emit('request_pool', obj);
 
 				// Handle job finishing
 			} else{
