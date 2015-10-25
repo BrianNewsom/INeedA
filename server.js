@@ -9,8 +9,8 @@ var port = process.env.PORT || 3000;
 var user = {
 	name: "Peyman Mortazavi",
 	phone: "(571) 263-4240",
-	address: "3685 Moorhead Ave",
-	city: "Boulder, CO 80305"
+	address: "3355 S Las Vegas Blvd",
+	city: "Las Vegas, NV 89109"
 }
 
 // Socket io junk

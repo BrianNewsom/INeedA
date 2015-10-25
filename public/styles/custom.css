@@ -77,8 +77,8 @@ hr {
 
 #page-one {
 	/*background-color: #EFEFEF;*/
-	color: #000;
-	background: url(/images/65H.jpg) no-repeat center center fixed; 
+	color: #fff;
+	background: url(/images/bartender.jpg) no-repeat center center fixed; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -125,8 +125,9 @@ input#pay-rate {
 	border:0;
 	border-bottom:solid 1px #000;
 	outline:none;
-	max-width: 3em;
-	text-align: center;
+	max-width: 2em;
+	text-align: left;
+	padding-left: 5px;
 }
 
 input#submit-btn {
