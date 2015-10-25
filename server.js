@@ -5,6 +5,8 @@ var formidable = require("formidable");
 var util = require('util');
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
+var twil = require('./twil.js');
+
 
 var user = {
 	name: "Peyman Mortazavi",
@@ -23,16 +25,9 @@ io.on('connection', function(socket){
 	socket.on('finished_job', function(data){
 		console.log("Received finished job message");
 		console.log(data);
+		// Send twilio message
+		twil.sendText('Your job has been completed! Your account has been charged $' + data.total_cost + '. Visit https://ineedaapp.herokuapp.com/star.html?id=14520aspdosa9 to review Peyman Mortazavi.');
 	})
-
-	/*
-	socket.on('disconnect', function() {
-		console.log('Got disconnect!');
-		if (GLOBAL_SOCKET == socket){
-			GLOBAL_SOCKET = null;
-		}
-	});
-	*/
 })
 
 
